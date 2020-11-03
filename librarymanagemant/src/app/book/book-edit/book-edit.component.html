@@ -1,0 +1,49 @@
+<form [formGroup]="bookForm" (ngSubmit)="UpdateBook()">
+    <section class="mt-3">
+         <div class="col-6 offset-3">
+           <div class="card">
+             <div class="card-header">
+               <h3> Book Update </h3>
+             </div>
+             <div class="card-content">
+               <div class="card-body">
+                   <div class="form-group row">
+                     <div class="col-3">
+                       <label for="">Book Name</label>
+                     </div>
+                     <div class="col-9">
+                           <input type="text" formControlName="bookName" class="form-control" name="bookName" placeholder="Book Name">
+                     </div>
+                   </div>
+               </div>
+               <div class="card-body">
+                   <div class="form-group row">
+                     <div class="col-3">
+                       <label for="">Author Name</label>
+                     </div>
+                     <div class="col-9">
+                           <input type="text" formControlName="authorName"  class="form-control"  name="authorName" placeholder="Author Name">
+                     </div>
+                   </div>
+               </div>
+               <div class="card-body">
+                   <div class="form-group row">
+                     <div class="col-3">
+                       <label for="">Price</label>
+                     </div>
+                     <div class="col-9">
+                           <input type="number" formControlName="price" class="form-control" name="price" placeholder="Price">
+                     </div>
+                   </div>
+               </div>
+             </div>
+             <div class="card-header">
+               <div class="footer mr-3">
+                 <button type="submit" class="btn btn-success mr-3">Submit</button>
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>
+       </form>
+   

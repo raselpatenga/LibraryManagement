@@ -7,15 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  rowData: any = [];
+  
   searchText: string;
 
+  columnDefs = [
+    { headerName: 'Id',  field: 'bookId', filter: true, width:250 },
+    { headerName: 'Book Name', field: 'bookName', filter: true, width:300 },
+    { headerName: 'Author Name', field: 'authorName', filter: true, width:300},
+    { headerName: 'Price', field: 'price', filter: true, width:250},
+    { headerName: 'Action', filter: true, width:250},
+];
+rowData: any = [];
   constructor(public service: BookService ) { }
 
   ngOnInit() {
     this.getDataList();
   }
 
+  
   getDataList() {
     this.service.getBook().subscribe(response => {
       this.rowData = response;

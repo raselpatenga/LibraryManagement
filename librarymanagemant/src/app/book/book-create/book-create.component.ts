@@ -25,6 +25,6 @@ export class BookCreateComponent implements OnInit {
     this.service.saveBook(this.model).subscribe(response=>{
       console.log(response);
     })
-    //this.toastr.success("Saved Successfully")
+    this.toastr.success("Saved Successfully")
   }
 }

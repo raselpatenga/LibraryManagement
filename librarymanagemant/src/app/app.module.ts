@@ -14,6 +14,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { BookEditComponent } from './book/book-edit/book-edit.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AgGridModule } from 'ag-grid-angular';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     Ng2SearchPipeModule,
     ToastrModule.forRoot(),
     FormsModule,
-    CommonModule
+    CommonModule,
+    AgGridModule.withComponents([])
   ],
   providers: [BookService],
   bootstrap: [AppComponent]

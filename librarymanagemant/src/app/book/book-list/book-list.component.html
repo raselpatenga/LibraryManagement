@@ -1,19 +1,48 @@
-<p>Book List</p>
+<p>List of Books</p>
+        <div class="form-group row">
+          <label for="search" class="col-sm-2 col-form-lable" style="text-align: right;">Search</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="searchText">         
+        </div>    
+    </div> 
+<table class="table table-bordered">
+    <thead class="thead-dark">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Price</th>      
+        <th>Action</th>      
+    </tr>
+</thead>
+    <tr *ngFor="let x of rowData | filter:searchText">
+        <td scope="col">{{x.bookId}}</td>
+        <td scope="col">{{x.bookName}}</td>
+        <td scope="col">{{x.authorName}}</td>
+        <td scope="col">{{x.price}}</td>   
+        <td>
+            <button type="button" value="Edit"><i class="fa fa-pencil" [routerLink]="['/book-edit',x.bookId]"></i></button>
+            <button type="button" value="Edit" ><i class="fa fa-trash"></i></button> 
+         </td>   
+    </tr>
+</table>
+<!-- <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+</div>
 
-<div class="form">
-      <div class="form-group">
-          <label for="search" class="col-sm-8 col-form-lable text-right">Search</label>
-          <div class="col-sm-4 float-right">
-            <input type="text" class="form-control"  placeholder="Search Here" [(ngModel)]="searchText">         
-          </div>    
-      </div> 
-
-    <div class="form-group">
-        <ag-grid-angular
-            style="width: 1350px; height: 500px;"
-            class="ag-theme-alpine"
-            [rowData]="rowData | filter:searchText"   
-            [columnDefs]="columnDefs">
-        </ag-grid-angular>
-    </div>
-</div> 
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of filterData | filter:term">
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.address}}</td>
+        </tr>
+    </tbody>
+</table> -->

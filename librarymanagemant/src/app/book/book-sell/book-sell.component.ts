@@ -14,6 +14,7 @@ export class BookSellComponent implements OnInit {
   bookList: BookSell[];
   model: Customer;
   keyword:string="";
+  
   constructor(
     public service : BookService
   ) {}
@@ -47,7 +48,17 @@ export class BookSellComponent implements OnInit {
 
   addtoCart(book: BookSell){
     book.sellqty = 1;
+    // for(let data of this.model.books){
+    //   debugger;
+    //   if(book.bookId == data.bookId){
+    //     book.sellqty += 1;
+    //   }
+    //   else{
+    //     this.model.books.push(book);
+    //   }
+    // }
     this.model.books.push(book)
+
     this.totalprice();
     this.totalDiscount();
 
@@ -60,11 +71,9 @@ export class BookSellComponent implements OnInit {
   totalprice(){
     let total = 0; this.model.total = 0;
     for(let data of this.model.books){
-      debugger;
       total += data.sellqty * data.price;
     }
     this.model.total = total;
-    console.log(this.model.total);
   }
   paidTotalCalculate(){
     if(this.model.paid > 0){

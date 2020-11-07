@@ -88,15 +88,14 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/font-awesome/css/font-awesome.min.css",
-              "node_modules/ngx-toastr/toastr.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              ,"node_modules/font-awesome/css/font-awesome.min.css"
+              , "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/popper.js/dist/umd/popper.min.js"
-            ]
+              "node_modules/popper.js/dist/umd/popper.min.js"            ]
           }
         },
         "lint": {
@@ -125,10 +124,6 @@
           }
         }
       }
-    }
-  },
-  "defaultProject": "librarymanagement",
-  "cli": {
-    "analytics": "e43c26f3-b78d-4b7a-8f76-43b73cf790c9"
-  }
+    }},
+  "defaultProject": "librarymanagement"
 }
